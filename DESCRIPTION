@@ -1,6 +1,6 @@
 Package: RCreliability
 Type: Package
-Title: corrects the bias in estimated regression coefficients due to classical additive measurement error
+Title: Corrects the Bias in Estimated Regression Coefficients Due to Classical Additive Measurement Error
 Version: 0.1.0
 Author: Yu Lu [cre, aut], Molin Wang [aut]
 Maintainer: Yu Lu <yulu@hsph.harvard.edu>
@@ -9,8 +9,11 @@ License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.2
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
-Config/testthat/edition: 3    
 Imports: 
-    mgcv,
-    sandwich
+    sandwich,
+    mgcv
+Config/testthat/edition: 3    
+VignetteBuilder: knitr

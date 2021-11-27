@@ -47,6 +47,8 @@ RCreliability.in function
 }
 \examples{
 library(RCreliability)
+library(mgcv)
+
 # Regression on only one covariates measured with error
 x<-rnorm(3000,0,1)
 #ICC=0.7 generate z
@@ -88,7 +90,7 @@ fit2<-RCreliability.ex(z.main,r,z.rep,W=W,Y)
 fit2
 
 # Regression on two covariates measured with error and no confounder
-x<-mgcv::rmvn(3000,c(0,0),matrix(c(1,0.3,0.3,1),nrow=2))
+x<-rmvn(3000,c(0,0),matrix(c(1,0.3,0.3,1),nrow=2))
 #ICC=0.7 generate z
 z.main = x[1:1500,1:2]+rnorm(1500,0,sqrt(0.4))
 r<-c(rep(2,500),rep(3,400),rep(4,600))
@@ -118,7 +120,7 @@ fit3<-RCreliability.ex(z.main,r,z.rep,W=NULL,Y)
 fit3
 
 # Regression on two covariates measured with error and two confounders
-x<-mgcv::rmvn(3000,c(0,0,0),matrix(c(1,0.3,0.2,0.3,1,0.5,0.2,0.5,1),nrow=3))
+x<-rmvn(3000,c(0,0,0),matrix(c(1,0.3,0.2,0.3,1,0.5,0.2,0.5,1),nrow=3))
 w2<-sapply(x[,1], function(t){if(t>median(x[,1])) {return(rbinom(1,1,0.5))}
   if(t<=median(x[,1])){return(rbinom(1,1,0.3))}})
 #ICC=0.7 generate z

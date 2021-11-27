@@ -1,6 +1,3 @@
-usethis::use_package("sandwich")
-usethis::use_package("mgcv")
-
 RCreliability.ex<-function(z.main, r, z.rep, W=NULL, Y){
   nm <- nrow(z.main)
   nr <- length(r)
@@ -65,7 +62,7 @@ RCreliability.ex<-function(z.main, r, z.rep, W=NULL, Y){
 
     fit2<-glm(Ymain~xhat,family = "binomial")
     beta.fit2<-fit2$coefficients
-    var2<-sandwich::sandwich(fit2)
+    var2<-sandwich(fit2)
 
     tab2<-summary(fit2)$coefficients
     tab2[,2]<-sqrt(diag(var2))
@@ -261,7 +258,7 @@ RCreliability.ex<-function(z.main, r, z.rep, W=NULL, Y){
 
     fit2<-glm(Ymain~xhat+Wmain,family = "binomial")
     beta.fit2<-fit2$coefficients
-    var2<-sandwich::sandwich(fit2)
+    var2<-sandwich(fit2)
 
     tab2<-summary(fit2)$coefficients
     tab2[,2]<-sqrt(diag(var2))
