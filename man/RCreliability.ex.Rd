@@ -46,6 +46,7 @@ Carroll RJ, Ruppert D, Stefanski L, Crainiceanu CM. Measurement Error in Nonline
 RCreliability.in function
 }
 \examples{
+\dontrun{
 library(RCreliability)
 library(mgcv)
 
@@ -153,4 +154,5 @@ p<-exp(-2.7+log(1.5)*rowSums(x[1:1500,1:3])+log(1.5)*w2[1:1500])/
 Y<-sapply(p,function(x) rbinom(1,1,x))[1:1500]
 fit4<-RCreliability.ex(z.main,r,z.rep,W=W,Y)
 fit4
+}
 }
