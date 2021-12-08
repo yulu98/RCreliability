@@ -46,7 +46,7 @@ Carroll RJ, Ruppert D, Stefanski L, Crainiceanu CM. Measurement Error in Nonline
 RCreliability.in function
 }
 \examples{
-\dontrun{
+\donttest{
 library(RCreliability)
 library(mgcv)
 

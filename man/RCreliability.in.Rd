@@ -46,7 +46,7 @@ RCreliability.ex function
 }
 \examples{
 
-\dontrun{
+\donttest{
 library(RCreliability)
 library(mgcv)
 
