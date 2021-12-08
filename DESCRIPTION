@@ -16,6 +16,6 @@ Imports:
     mgcv
 Config/testthat/edition: 3    
 VignetteBuilder: knitr
-Author: Yu Lu [aut, cre], Molin Wang [aut] 
+Author: Yu Lu [aut, cre, cph], Molin Wang [aut] 
 Maintainer: Yu Lu <yulu@hsph.harvard.edu>
 Repository: CRAN
